@@ -20,7 +20,7 @@ export const authOptions = {
             // submitted and returns either a object representing a user or value
             // that is false/null if the credentials are invalid.
             // e.g. return { id: 1, name: 'J Smith', email: 'jsmith@example.com' }
-            // You can also use the `req` object to obtain additional parameters
+            // You can also use the req object to obtain additional parameters
             // (i.e., the request IP address)
             const res = await fetch("https://www.melivecode.com/api/login", {
               method: 'POST',
@@ -28,36 +28,33 @@ export const authOptions = {
               headers: { "Content-Type": "application/json" }
             })
             const data = await res.json()
-      
-            // If no error and we have user data, return it
+
+// If no error and we have user data, return it
             if (data.status == 'ok') {
-              return data.user
+              return data.user 
             }
             // Return null if user data could not be retrieved
             return null
           }
         })
       ],
-
-      secret: "LlKq6ZtYbr+hTC073mAmAh9/h2HwMfsFo4hrfCx5mLg=",
-      callbacks: {
-        async jwt({ token, user, account }) {
-
-            // console.log(user)
-        
-          if (account) {
-            token.accessToken = account.access_token
-            token.user = user
-          }
-          return token
-        },
-        async session({ session, token, user }) {
-          // Send properties to the client, like an access_token from a provider.
-          session.accessToken = token.accessToken
-          session.user = token.user
-          return session
-        }
-      }
+   secret: "LlKq6ZtYbr+hTC073mAmAh9/h2HwMfsFo4hrfCx5mLg=",
+   callbacks: {
+  async jwt({ token,user, account }) {
+    console.log(user)
+    // Persist the OAuth access_token to the token right after signin
+    if (account) {
+      token.accessToken = account.access_token
+      token.user = user
+    }
+    return token
+  },
+  async session({ session, token, user }) {
+    // Send properties to the client, like an access_token from a provider.
+    session.accessToken = token.accessToken
+    session.user = token.user
+    return session
   }
-
+}
+  }
   export default NextAuth(authOptions)

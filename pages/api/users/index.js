@@ -62,10 +62,3 @@ export default function handler(req, res) {
 
   }
 }
-
-// export default function handler(req, res) {
-//     res.status(200).json([
-//         { id: '1', firstname: 'anuchat', lastname: 'rungsiyanon', username: 'anuchat@gmail.com', password: '1234', status: 'admin' },
-//         { id: '2', firstname: 'อนุชาติ', lastname: 'รังสิยานนท์', username: 'rungsiyanon@gmail.com', password: '1234', status: 'user' }
-//     ])
-//   }
