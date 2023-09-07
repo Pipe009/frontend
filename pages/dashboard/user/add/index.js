@@ -4,6 +4,7 @@ import Link from "next/link";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useRouter } from "next/router";
 
+
 export default function Component({ posts }) {
   const { data: session } = useSession();
   const router = useRouter()
@@ -29,7 +30,7 @@ export default function Component({ posts }) {
     //console.log("status :", jsonData.status);
 
    
-      fetch(`http://localhost:3000/api/users`, {
+      fetch(`http://frontend-git-main-ji560chan-gmailcom.vercel.app/api/users`, {
         method: 'POST', // or 'PUT'
         headers: {
           'Content-Type': 'application/json',
