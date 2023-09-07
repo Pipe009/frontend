@@ -23,7 +23,7 @@ const handleDelete = async (id) => {
 
    if (result.isConfirmed) {
     // Perform the deletion using fetch
-    fetch('https://frontend-git-main-ji560chan-gmailcom.vercel.app/api/user/' + id, {
+    fetch('https://nattawut009-ji560chan-gmailcom.vercel.app/api/user/' + id, {
       method: 'DELETE',
     }); 
 
@@ -126,7 +126,7 @@ return (
 }
 
 export async function getServerSideProps() {
-const res = await fetch('https://frontend-git-main-ji560chan-gmailcom.vercel.app/api/user');
+const res = await fetch('https://nattawut009-ji560chan-gmailcom.vercel.app/api/user');
 const posts = await res.json();
 
 return {

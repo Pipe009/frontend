@@ -30,7 +30,7 @@ export default function Component({ posts }) {
     //console.log("status :", jsonData.status);
 
    
-      fetch(`http://frontend-git-main-ji560chan-gmailcom.vercel.app/api/users`, {
+      fetch(`https://nattawut009-ji560chan-gmailcom.vercel.app/api/users`, {
         method: 'POST', // or 'PUT'
         headers: {
           'Content-Type': 'application/json',

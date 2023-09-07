@@ -5,7 +5,7 @@ import Swal from 'sweetalert2';
 import 'bootstrap/dist/css/bootstrap.min.css';
 export async function getServerSideProps(req) {
   const { id } = req.query;
-  const res = await fetch('https://frontend-git-main-ji560chan-gmailcom.vercel.app/api/user/' + id, {
+  const res = await fetch('https://nattawut009-ji560chan-gmailcom.vercel.app/api/user/' + id, {
     method: 'GET',
   })
   const posts = await res.json();
@@ -35,7 +35,7 @@ export default function Component({ posts }) {
       status: data.get('status')
     }
 
-      fetch(`https://frontend-git-main-ji560chan-gmailcom.vercel.app/api/user`, {
+      fetch(`https://nattawut009-ji560chan-gmailcom.vercel.app/api/user`, {
         method: 'PUT', // or 'PUT'
         headers: {
           'Content-Type': 'application/json',
